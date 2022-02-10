@@ -6,7 +6,7 @@ public class PuzzleJava {
     private Random randMachine = new Random();
 
     /**
-     * A method made 10 random number between 1~20
+     * A method that makes 10 random number between 1~20
      * @return 10 random numbers 
      */
     public ArrayList<Integer> getTenRolls() {
@@ -17,14 +17,14 @@ public class PuzzleJava {
         return rolls;
     }
     /**
-     * A method generate a random lowercase letter.
+     * A method that generates a random lowercase letter.
      * @return a random lowercase alphabet letter
      */
     public char getRandomLetter() {
         return letterArray[randMachine.nextInt(26)];
     }
     /**
-     * A method generate a password. It consists lowercase alphabetletters.
+     * A method that generates a password. It consists lowercase alphabetletters.
      * Todo : If you want to make this method more realistic,
      * then add to letterArray to numbers and special characters.
      * @return 8 random alphabet lowercase letters
@@ -37,7 +37,7 @@ public class PuzzleJava {
         return new String(password);
     }
     /**
-     * A methode generate passwords ArrayList. It uses geteratePassword() method.
+     * A methode that generates passwords ArrayList. It uses geteratePassword() method.
      * @param num the number of the passwords
      * @return the ArrayList of the passwords
      */
@@ -50,14 +50,13 @@ public class PuzzleJava {
     }
     /**
      * <Sensei bonus>
-     * A method shuffles a password.
+     * A method that shuffles an ArrayList.
      * @param objList the original password
      */
     public <T> void shuffleArray(ArrayList<T> objList) {
-        T tmp = null;
         for (int i = 0; i < objList.size(); i++) {
             int swapIdx = randMachine.nextInt(objList.size());
-            tmp = objList.get(i);
+            T tmp = objList.get(i);
             objList.set(i, objList.get(swapIdx));
             objList.set(swapIdx, tmp);
         }
