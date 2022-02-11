@@ -1,3 +1,4 @@
+import java.util.HashMap;
 public class TestTrackList {
     public static void main(String[] args) {
         System.out.println("----- Test Add Song -----");
@@ -38,19 +39,24 @@ public class TestTrackList {
         "There's a thousand reasons I should go about my day",
         "And ignore your whispers which I wish would go away, oh oh oh"
         );
-        TrackList trackList = new TrackList();
-        trackList.addSong(title1, lyrics1);
-        trackList.addSong(title2, lyrics2);
-        trackList.addSong(title3, lyrics3);
-        trackList.addSong(title4, lyrics4);
+        //TrackList trackList = new TrackList();
+        HashMap<String, String> trackList = new HashMap<>();
+        trackList.put(title1, lyrics1);
+        trackList.put(title2, lyrics2);
+        trackList.put(title3, lyrics3);
+        trackList.put(title4, lyrics4);
 
         System.out.println("\n----- Test Get Song -----");
-        System.out.println(trackList.getSong(title3));
-        System.out.println(trackList.getSong(title1));
-        System.out.println(trackList.getSong(title4));
-        System.out.println(trackList.getSong(title2));
+        System.out.println(trackList.get(title3));
+        System.out.println(trackList.get(title1));
+        System.out.println(trackList.get(title4));
+        System.out.println(trackList.get(title2));
 
         System.out.println("\n----- Test Print Songs -----");
-        trackList.printSongs();
+        for (String title : trackList.keySet()) {
+            System.out.printf("%s: %s \n", title, trackList.get(title));
+            System.out.println("");
+        }
+        System.out.println("");
     }
 }
