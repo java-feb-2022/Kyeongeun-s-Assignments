@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 public class Algo {
     /**
      * A method that swaps an int array 
@@ -24,48 +25,33 @@ public class Algo {
             idx++;
         }
     }
-    /**
-     * A method that prints an int array
-     * @param numbers
-     */
-    public static void printArray(int[] numbers) {
-        System.out.print("[");
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i]);
-            // Don't print last comma
-            if (i != numbers.length -1) {
-                System.out.print((", "));
-            }
-        }
-        System.out.println("]");
-    }
     public static void main(String[] args) {
         
         int[] numbers = {1,2,3,4,5,6,7,8,9,10};
-        printArray(numbers);
+        System.out.println(Arrays.toString(numbers));
         reverse(numbers);
-        printArray(numbers);
+        System.out.println(Arrays.toString(numbers));
 
         // Change the array size
         int[] numbers1 = {1,2,3,4,5,6,7,8,9,10,11,12};
-        printArray(numbers1);
+        System.out.println(Arrays.toString(numbers1));
         reverse(numbers1);
-        printArray(numbers1);
+        System.out.println(Arrays.toString(numbers1));
 
         // Empty the array
         int[] numbers2 = {};
-        printArray(numbers2);
+        System.out.println(Arrays.toString(numbers2));
         reverse(numbers2);
-        printArray(numbers2);
+        System.out.println(Arrays.toString(numbers2));
 
         replaceEvenToZero(numbers);
-        printArray(numbers);
+        System.out.println(Arrays.toString(numbers));
 
         replaceEvenToZero(numbers1);
-        printArray(numbers1);
+        System.out.println(Arrays.toString(numbers1));
 
         replaceEvenToZero(numbers2);
-        printArray(numbers2);
+        System.out.println(Arrays.toString(numbers2));
     }
 
 }
