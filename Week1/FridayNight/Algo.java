@@ -2,7 +2,7 @@ import java.util.ArrayList;
 public class Algo {
     /**
      * A method that swaps an int array 
-     * @param anArray
+     * @param anArray int array
      */
     public static void reverse(int[] anArray) {
         int tmp = 0;
@@ -12,11 +12,24 @@ public class Algo {
             anArray[anArray.length - 1 - i] = tmp;
         }
     }
+    /** A method that replace all even numbers to 0
+     * @param anArray int array
+     */
+    public static void replaceEvenToZero(int[] anArray) {
+        int idx = 0;
+        while(idx < anArray.length) {
+            if (anArray[idx] % 2 == 0) {
+                anArray[idx] = 0;
+            }
+            idx++;
+        }
+    }
     /**
      * A method that prints an int array
      * @param numbers
      */
     public static void printArray(int[] numbers) {
+        System.out.print("[");
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i]);
             // Don't print last comma
@@ -24,7 +37,7 @@ public class Algo {
                 System.out.print((", "));
             }
         }
-        System.out.println("");
+        System.out.println("]");
     }
     public static void main(String[] args) {
         
@@ -44,5 +57,15 @@ public class Algo {
         printArray(numbers2);
         reverse(numbers2);
         printArray(numbers2);
+
+        replaceEvenToZero(numbers);
+        printArray(numbers);
+
+        replaceEvenToZero(numbers1);
+        printArray(numbers1);
+
+        replaceEvenToZero(numbers2);
+        printArray(numbers2);
     }
+
 }
