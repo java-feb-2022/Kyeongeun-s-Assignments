@@ -5,7 +5,7 @@ public class TestOrders {
      * A methods that prints order attributes
      * @param order
      */
-    public static void printOut(Orders order) {
+    public static void printOut(Order order) {
         System.out.println("==== order ====");
         System.out.printf("Name: %s\n", order.name);
         System.out.printf("Total: %s\n", order.total);
@@ -22,10 +22,10 @@ public class TestOrders {
     public static void main(String[] args) {
     
         // Menu items
-        Items item1 = new Items();
-        Items item2 = new Items();
-        Items item3 = new Items();
-        Items item4 = new Items();
+        Item item1 = new Item();
+        Item item2 = new Item();
+        Item item3 = new Item();
+        Item item4 = new Item();
         item1.name = "mocha";
         item1.price = 4.0;
         item2.name = "latte";
@@ -36,10 +36,10 @@ public class TestOrders {
         item4.price = 4.5;
 
         // Order variables -- order1, order2 etc.
-        Orders order1 = new Orders();
-        Orders order2 = new Orders();
-        Orders order3 = new Orders();
-        Orders order4 = new Orders();
+        Order order1 = new Order();
+        Order order2 = new Order();
+        Order order3 = new Order();
+        Order order4 = new Order();
 
         order1.name = "Cindhuri";
         order2.name = "Jimmy";

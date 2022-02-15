@@ -1,4 +1,4 @@
-public class Items {
+public class Item {
     String name;
     double price;
 
