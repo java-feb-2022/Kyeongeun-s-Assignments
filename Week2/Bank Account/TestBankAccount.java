@@ -22,21 +22,21 @@ public class TestBankAccount {
         account5.deposit(IS_CHECKING, 9542.25);
         account5.deposit(IS_SAVINGS, 244444433.28);
         System.out.println("===== Total Amount Test =====");
-        System.out.println("Total: " + BankAccount.getTotalAmount());
+        System.out.printf("Total: %,.2f\n\n",BankAccount.getTotalAmount());
 
-        System.out.println("===== Display Test =====");
+        System.out.println("\n===== Display Test =====");
         account1.display();
         account2.display();
         account3.display();
         account4.display();
         account5.display();
 
-        System.out.println("===== Withdraw Test =====");
+        System.out.println("\n===== Withdraw Test =====");
         double money = 150000000;
         account5.withdraw(IS_CHECKING, money);
         account5.withdraw(IS_SAVINGS, money);
 
-        System.out.println("===== Deposit Negative Number Test =====");
+        System.out.println("\n===== Deposit Negative Number Test =====");
         account1.deposit(IS_CHECKING, -3);
         account1.display();
     }
