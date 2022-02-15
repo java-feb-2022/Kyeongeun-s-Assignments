@@ -1,17 +1,17 @@
 import java.util.ArrayList;
-public class Orders {
+public class Order {
     private String name;
     private boolean ready = false;
-    private ArrayList<Items> items = new ArrayList<>();
+    private ArrayList<Item> items = new ArrayList<>();
 
-    private static ArrayList<Orders> ORDERS_LIST = new ArrayList<>();
+    private static ArrayList<Order> ORDERS_LIST = new ArrayList<>();
 
     // CONTRUCTORS
-    public Orders(){
+    public Order(){
         this("");
     }
 
-    public Orders(String name) {
+    public Order(String name) {
         this.name = name;
         ORDERS_LIST.add(this);
     }
@@ -37,7 +37,7 @@ public class Orders {
     public void setIsReady(boolean ready) {
         this.ready = ready;
     }
-    public void addItem(Items item){
+    public void addItem(Item item){
         this.items.add(item);
     }
     /**
@@ -59,7 +59,7 @@ public class Orders {
      */
     public void display() {
         System.out.println("Customer Name: " + this.name);
-        for(Items item: this.items) {
+        for(Item item: this.items) {
             item.display();
         }
         System.out.printf("Total: $%,.2f\n", getOrderTotal());
@@ -69,7 +69,7 @@ public class Orders {
      * It calls display method of each order.
      */
     public static void show() {
-        for(Orders order : ORDERS_LIST) {
+        for(Order order : ORDERS_LIST) {
             order.display();
         }
     }

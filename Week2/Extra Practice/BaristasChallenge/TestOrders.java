@@ -3,18 +3,18 @@ import java.util.ArrayList;
 public class TestOrders {
     public static void main(String[] args) {
         // Create 2 orders for unspecified guests
-        Orders order1 = new Orders();
-        Orders order2 = new Orders();
+        Order order1 = new Order();
+        Order order2 = new Order();
         // Create 3 orders with names
-        Orders order3 = new Orders("Cherry the Cat");
-        Orders order4 = new Orders("Kiwi the T-Rex");
-        Orders order5 = new Orders("Robin the Unicorn");
+        Order order3 = new Order("Cherry the Cat");
+        Order order4 = new Order("Kiwi the T-Rex");
+        Order order5 = new Order("Robin the Unicorn");
 
         // Item lists
-        Items item1 = new Items("mocha", 4.0);
-        Items item2 = new Items("latte", 3.0);
-        Items item3 = new Items("drip coffee", 5.5);
-        Items item4 = new Items("capuccino", 4.5);
+        Item item1 = new Item("mocha", 4.0);
+        Item item2 = new Item("latte", 3.0);
+        Item item3 = new Item("drip coffee", 5.5);
+        Item item4 = new Item("capuccino", 4.5);
 
         // Add more than 2 items to each of the orders        
         order1.addItem(item1);
@@ -47,7 +47,7 @@ public class TestOrders {
 
         // display all orders
         System.out.println("\n==== display() Test ====");
-        Orders.show();
+        Order.show();
     }
 }
 
