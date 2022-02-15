@@ -22,7 +22,7 @@ public class CoffeeKiosk {
         System.out.println("Add new Menu!");
         String itemName = "start";
         while(true) {
-            System.out.println("Please enter new menu item name:(q- quit, s-show menus)");
+            System.out.println("Please enter new menu item name:(q- quit, s-show menu)");
             itemName = System.console().readLine();
             if(itemName.equals("q")) {
                 System.out.println("Done...");
