@@ -55,7 +55,6 @@ public class LookifyController {
 	@PostMapping("/search")
 	public String search(@RequestParam("artist")String search, Model model) {
 		List<Song> songs = lookifyService.findByArtist(search);
-		System.out.println(songs);
 		model.addAttribute("artist", search); //display artist name
 		model.addAttribute("songs", songs);
 		return "search.jsp";

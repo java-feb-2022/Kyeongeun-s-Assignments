@@ -13,4 +13,5 @@ public interface LookifyRepository extends CrudRepository<Song, Long>{
 	List<Song> findAll();
 	List<Song> findByArtist(String search);
 	List<Song> findByOrderByRatingDesc();
+	
 }
