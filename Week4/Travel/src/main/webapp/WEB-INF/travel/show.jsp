@@ -19,31 +19,24 @@
 <div class="d-flex flex-column width80">
 
 
-<h1>Save Travels</h1>
+<h1>Expense Details</h1>
 <a href="/expenses"> go to main</a> 
 
-<h1>Edit an expense:</h1>
-<form:form action="/process/update/${expense.id}" method="put" class="d-flex flex-column" modelAttribute="expense">
-	<form:errors class="text-danger" path="name"/>
-	<form:errors path="vendor" class="text-danger"/>
-	<form:errors path="amount" class="text-danger" />
-	<form:errors path="description" class="text-danger"/>
+<table class="table">
+		<tr>
+			<th>Expense Name:</th> 			<td>${item.name}</td>
+		</tr>
+		<tr>
+			<th>Expense Description:</th> <td>${item.description}</td>
+		</tr>
+		<tr>
+			<th>Vendor</th>			<td>${item.vendor}</td>
+		</tr>
+		<tr>
+			<th>Amount</th>			<td>$${item.amount}</td>
+		</tr>
 
-	<form:label path="name">Expense Name:</form:label>
-	<form:input path="name" />
-
-
-	<form:label path="vendor">Vendor:</form:label>
-	<form:input path="vendor" />
-
-
-	<form:label path="amount">Amount:</form:label>
-	<form:input path="amount" />
-
-	<form:label path="description">Description:</form:label>
-	<form:textarea path="description" rows="5" cols="30"/>
-	<input type="submit">
-</form:form>	
+</table>
 	
 </div>
 </body>

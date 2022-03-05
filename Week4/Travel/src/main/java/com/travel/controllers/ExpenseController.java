@@ -27,7 +27,7 @@ public class ExpenseController {
 		this.expenseService = expenseService;
 	}
 
-	@GetMapping("/travel")
+	@GetMapping("/expenses")
     public String index(Model model) {
         List<Expense> items = expenseService.allExpenses();
         model.addAttribute("items", items);
@@ -46,10 +46,10 @@ public class ExpenseController {
             return "/travel/index.jsp";
         } else {
             expenseService.createExpense(e);
-            return "redirect:/travel";
+            return "redirect:/expenses";
         }
     }
-    @GetMapping("/travel/edit/{id}") 
+    @GetMapping("/expenses/edit/{id}") 
     public String edit(@PathVariable Long id, Model model) {
 
         Optional<Expense> e = expenseService.findById(id);
@@ -60,7 +60,7 @@ public class ExpenseController {
         } else {
         	System.out.println("error!!!!");
         	// todo: where can i put the error msg?
-        	return "redirect:/travel";
+        	return "redirect:/expenses";
         }
     }
     @PutMapping("/process/update/{id}")
@@ -70,13 +70,27 @@ public class ExpenseController {
         	return "/travel/edit.jsp";
         } else {
             expenseService.updateExpense(e);
-            return "redirect:/travel";
+            return "redirect:/expenses";
         }
     }
-    @DeleteMapping("/travel/delete/{id}")
+    @DeleteMapping("/expenses/delete/{id}")
     public String delete(@PathVariable Long id) {
         expenseService.deleteExpense(id);
-        return "redirect:/travel";
+        return "redirect:/expenses";
+    }
+    @GetMapping("/expenses/{id}")
+    public String show(@PathVariable Long id, Model model) {
+        Optional<Expense> e = expenseService.findById(id);
+        
+        if(e.isPresent()) {
+        	model.addAttribute("item", e.get());
+        	return "/travel/show.jsp";
+        } else {
+        	System.out.println("error!!!!");
+        	// todo: where can i put the error msg?
+        	return "redirect:/expenses";
+        }   	
+    	
     }
 
 }
