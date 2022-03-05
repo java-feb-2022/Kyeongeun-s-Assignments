@@ -66,7 +66,8 @@ public class ExpenseController {
     @PutMapping("/process/update/{id}")
     public String update(@Valid @ModelAttribute("expense") Expense e, BindingResult result){
         if(result.hasErrors()){
-            return "redirect:/travel";
+
+        	return "/travel/edit.jsp";
         } else {
             expenseService.updateExpense(e);
             return "redirect:/travel";
