@@ -21,39 +21,16 @@
 <div class="d-flex flex-column width80">
 
 	<nav class="d-flex fullwidth justify-content-between">
-	<div>
-		<a href="/songs/new">Add New</a> |
-		<a href="/search/topTen">Top Songs</a>
-	</div>
-	<!--  todo  -->
-	<form action="/search" method="post">
-		<input type="text" name="artist"/>
-		<button>Search Artists</button>
-	</form>
-	<!-- todo -->
+		<h4>Top Ten Songs:</h4>
+		<a href="/dashboard">Dashboard</a>
 	</nav>
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>rating</th>
-				<th>actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="song" items="${songs}">
-				<tr>
-					<td><a href="/songs/${song.id}">${song.title}</a></td>
-					<td>${song.rating}</td>
-					<td>
-						<form:form action="/songs/delete/${song.id}" method="delete">
-							<button class="btn btn-link">Delete</button>
-						</form:form>
-					</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+	<p class="table">
+		<c:forEach var="song" items="${songs}">
+			${song.rating}
+			- <a href="/songs/${song.id}">${song.title}</a>
+			- ${song.artist}<br>
+		</c:forEach>		
+	</p>
 </div>
 </body>
 </html>

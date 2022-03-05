@@ -39,6 +39,8 @@ public class LookifyService {
 	
 	public Song findSong(Long id) {
 		Optional<Song> optionalSong = lookifyRepository.findById(id);
+		System.out.println(optionalSong.isPresent());
+		System.out.println(optionalSong.get());
 		return optionalSong.isPresent()?optionalSong.get():null;
 	}
 	public Song updateSong(Song song) {

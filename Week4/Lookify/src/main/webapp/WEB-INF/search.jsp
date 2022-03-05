@@ -24,10 +24,10 @@
 	<div>
 		Songs by artist:${artist}
 	</div>
-	<form:form action="/search" method="post">
-		<form:input path="artist"/>
+	<form action="/search" method="post">
+		<input type="text" name="artist" value="${artist}"/>
 		<button>New Search</button>
-	</form:form>
+	</form>
 	<a href="/dashboard">Dashboard</a>
 	</nav>
 	<table class="table">
@@ -43,7 +43,11 @@
 				<tr>
 					<td>${song.title}</td>
 					<td>${song.rating}</td>
-					<td>delete</td>
+					<td>
+						<form:form action="/songs/delete/${song.id}" method="delete">
+							<button class="btn btn-link">Delete</button>
+						</form:form>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>

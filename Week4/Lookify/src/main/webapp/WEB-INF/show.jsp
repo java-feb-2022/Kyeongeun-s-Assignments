@@ -20,40 +20,48 @@
 <body class="d-flex justify-content-center fullwidth">
 <div class="d-flex flex-column width80">
 
-	<nav class="d-flex fullwidth justify-content-between">
-	<div>
-		<a href="/songs/new">Add New</a> |
-		<a href="/search/topTen">Top Songs</a>
-	</div>
-	<!--  todo  -->
-	<form action="/search" method="post">
-		<input type="text" name="artist"/>
-		<button>Search Artists</button>
-	</form>
-	<!-- todo -->
+	<nav class="d-flex fullwidth justify-content-end">
+		<a href="/dashboard">Dashboard</a>
 	</nav>
-	<table class="table">
+
+
+	<table class="fullwidth table">
 		<thead>
 			<tr>
-				<th>Name</th>
-				<th>rating</th>
-				<th>actions</th>
+				<th></th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="song" items="${songs}">
-				<tr>
-					<td><a href="/songs/${song.id}">${song.title}</a></td>
-					<td>${song.rating}</td>
-					<td>
-						<form:form action="/songs/delete/${song.id}" method="delete">
-							<button class="btn btn-link">Delete</button>
-						</form:form>
-					</td>
-				</tr>
-			</c:forEach>
+
+		<tr>
+			<td> Title
+			</td>
+			<td>
+				${song.title}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				 Artist		
+			</td>
+			<td>
+				${song.artist}</td>
+		</tr>
+		
+		<tr>
+			<td>
+			Rating(1-10)			
+			</td>
+			<td>
+				${song.rating}
+			</td>
+		</tr>
 		</tbody>
 	</table>
+	<form:form action="/songs/delete/${song.id}" method="delete">
+		<button class="btn btn-link">Delete</button>
+	</form:form>
 </div>
 </body>
 </html>
