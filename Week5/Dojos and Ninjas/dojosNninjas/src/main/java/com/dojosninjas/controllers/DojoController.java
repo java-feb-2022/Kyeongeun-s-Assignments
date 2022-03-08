@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -54,6 +55,15 @@ public class DojoController {
 		model.addAttribute("dojo", dojo);
 		return "show.jsp";
 	}
+	
+	@DeleteMapping("/dojos/delete/{id}")
+	public String deleteDojo(@PathVariable Long id) {
+		//relational
+		Dojo dojo =dojoService.findById(id);
+		ninjaService.deleteNinjas(dojo.getNinjas());
+		dojoService.deleteDojo(id);
+		return "redirect:/";
+	}
 	@GetMapping("/ninjas/new")
 	public String newNinja(Model model) {
 		List<Dojo> dojos = dojoService.allDojos();
@@ -70,6 +80,18 @@ public class DojoController {
 			ninjaService.createNinja(ninja);
 			return "redirect:/"; //todo : return to that dojo?
 		}
+	}
+	@DeleteMapping("ninjas/delete/{id}")
+	public String deleteNinja(@PathVariable Long id) {
+		Ninja ninja = ninjaService.findById(id);
+		if (ninja !=null) {
+			Dojo dojo = ninja.getDojo();
+			ninjaService.deleteNinja(id);
+			return "redirect:/dojos/"+dojo.getId();
+		} else {
+			return "redirect:/";
+		}
+		
 	}
 	
 }

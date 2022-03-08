@@ -1,6 +1,7 @@
 package com.dojosninjas.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -30,5 +31,13 @@ public class NinjaService {
 	}
 	public void deleteNinja(Long id) {
 		ninjaRepo.deleteById(id);
+	}
+	public void deleteNinjas(List<Ninja> ninjas) {
+		ninjaRepo.deleteAll(ninjas);
+	}
+
+	public Ninja findById(Long id) {
+		Optional<Ninja> n = ninjaRepo.findById(id);
+		return n.isPresent()?n.get():null;
 	}
 }
