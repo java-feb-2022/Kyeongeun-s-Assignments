@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.fullwidth {
+    width:100%;
+}
+.width80{
+    width:80%;
+}
+.flex1 {
+    flex:1;
+}
+.flex2 {
+    flex:2;
+}
+.reader{
+	color:darkorchid;
+}
+.booktitle{
+	color:crimson;
+}
+.bookauthor{
+	color:green;
+}

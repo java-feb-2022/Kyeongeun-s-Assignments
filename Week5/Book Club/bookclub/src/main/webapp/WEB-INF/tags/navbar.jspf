@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-end fullwidth">
+<a href="/books" class="m-1">back to the shelves</a>
+<span class="m-1">|</span>
+<a href="/logout" class="m-1">logout</a>
+</div>
