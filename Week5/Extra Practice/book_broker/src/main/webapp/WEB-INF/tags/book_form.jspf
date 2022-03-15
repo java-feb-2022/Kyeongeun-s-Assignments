@@ -1,0 +1,30 @@
+	<form:hidden path="user" value="${loggedInUser.id}"></form:hidden>
+<table class="table fullwidth">
+	<form:errors path="title" class="text-danger"/>
+	<form:errors path="author" class="text-danger"/>
+  <tr>
+	<td>
+  	  <form:label path="title">Title:</form:label>
+	</td>
+	<td>
+	  <form:input class="form-control" path="title"/>
+	</td>
+  </tr>
+  <tr>
+	<td>
+  	  <form:label path="author">Author:</form:label>
+	</td>
+	<td>
+	  <form:input class="form-control" path="author"/>
+	</td>
+  </tr>
+    <tr>
+	<td>
+  	  <form:label path="review">My thought:</form:label>
+	</td>
+	<td>
+	  <form:textarea class="form-control" cols="30" rows="10" path="review"/>
+	</td>
+  </tr>
+</table>
+	<button class="btn btn-primary">Submit</button>
