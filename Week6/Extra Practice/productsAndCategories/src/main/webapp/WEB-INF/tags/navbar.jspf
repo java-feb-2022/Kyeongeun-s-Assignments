@@ -1,0 +1,8 @@
+<div class="d-flex justify-content-end fullwidth">
+	
+	<a href="/">main</a> 
+	<span class="m-1">|</span>
+	<a href="/categories/new">new category</a>
+	<span class="m-1">|</span>
+	<a href="/products/new">new products</a>
+</div>
