@@ -26,6 +26,7 @@
 					<option value="${cat.id}" label="${cat.name}"/>
 				</c:forEach>
 			</select>
+			<button class="btn btn-primary">Submit</button>
 		</form>	
 	</div>
 	

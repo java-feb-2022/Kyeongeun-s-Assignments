@@ -23,6 +23,9 @@ public class CategoryService {
 
 		return categoryRepo.save(category);
 	}
+	public Category update(Category category) {
+		return categoryRepo.save(category);
+	}
 	
 	public Category findById(Long id) {
 		return categoryRepo.findById(id).orElse(null);

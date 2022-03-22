@@ -61,7 +61,7 @@ public class ProductController {
 		
 		product.getCategories().add(category);
 		productService.update(product);
-		return "redirect:/categories/{id}";
+		return "redirect:/categories/" +id;
 		
 	}
 	@DeleteMapping("/categories/delete/{id}")
@@ -91,4 +91,13 @@ public class ProductController {
 		return "showProduct.jsp";
 	}
 	
+	@PostMapping("/products/addCategory/{id}")
+	public String addCategoryToProduct(@PathVariable Long id, @RequestParam("category") Long category_id) {
+		Category category = categoryService.findById(category_id);
+		Product product = productService.findById(id);
+		
+		category.getProducts().add(product);
+		categoryService.update(category);
+		return "redirect:/products/" + id;
+	}
 }
